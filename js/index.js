@@ -2,7 +2,7 @@ const topItems = ["expresso", "latte", "mocktail", "dessert"];
 for (let item of topItems) {
   $("#js_products").append(`
     <div class="col-md-3 col-xs-6 product-card">
-      <a href="product1.html#${item}">
+      <a href="product.html#${item}">
         <img src="images/product/top/${item}.jpg" loading="lazy" alt="${item}" class="img-responsive">
       </a>
     </div>`)
@@ -61,10 +61,10 @@ for (let item of carouselItems) {
       <img loading="lazy" alt="First slide" class="center-block visible-xs" src="images/banner/banner${item.id}mobile.jpg">
       <div class="carousel-caption">
         <div class="row">
-          <a href="product1.html#${item.target}" class="banner__title">${item.title}</a>
+          <a href="product.html#${item.target}" class="banner__title">${item.title}</a>
           <div class="banner__content">${item.content}</div>
         </div>
-        <a href="product1.html#${item.link}" class="${item.className}">${item.btnType}</a>
+        <a href="product.html#${item.link}" class="${item.className}">${item.btnType}</a>
       </div>
     </div>`
   );
@@ -96,16 +96,16 @@ const newsItems = [
     content: `<p>Starbuck, Highland coffee, the Coffee house is Lorem ipsum dolor sit amet consectetur.</p><p>Starbuck, Highland coffee, the Coffee house.</p><p>Starbuck, Highland coffee, the Coffee house is Lorem ipsum dolor sit amet consectetur.</p><p>Really long article is hidden. Starbuck, Highland coffee, the Coffee house is Lorem ipsum dolor sit amet consectetur.</p>`,
   },
 ];
-for (let n of newsItems) {
+for (let newsItem of newsItems) {
   $("#js_news__items").append(`
 <div class="news__box">
   <div class="news__article">
     <div class="col-xs-6">
-      <a href="${n.link}"><img src="${n.imgSrc}" loading="lazy" alt="" class="img-responsive"></a>
+      <a href="${newsItem.link}"><img src="${newsItem.imgSrc}" loading="lazy" alt="" class="img-responsive"></a>
     </div>
     <div class="col-xs-6">
-      <a class="news__title" href="${n.link}">${n.title}</a>
-      ${n.content}
+      <a class="news__title" href="${newsItem.link}">${newsItem.title}</a>
+      ${newsItem.content}
     </div>
   </div>
 </div>`);
