@@ -1,8 +1,3 @@
-const F = document.querySelector.bind(document);
-$("#shadow--mobile").hide();
-$("#nav--mobile").hide();
-$("#search__field").hide();
-
 const products = [
     "imgProduct2",
     "imgProduct3",
@@ -34,29 +29,6 @@ for (let other of others) {
 </div>
 `);
 }
-
-$("#js_hamburger-menu").click(function () {
-    $("#search__field").fadeOut();
-    $("#shadow--mobile").fadeToggle();
-    $("#nav--mobile").slideToggle();
-});
-
-$("#shadow--mobile").click(function () {
-    $("#nav--mobile").slideUp();
-    $("#shadow--mobile").fadeOut();
-});
-
-$("#search__icon").click(function () {
-    $("#search__field").fadeToggle();
-    F("#search__field").value = "";
-});
-
-$("#search__field").keypress(function (event) {
-    if (event.keyCode == "13") {
-        F("#search__field").value = "";
-        $("#search__field").fadeOut();
-    }
-});
 
 $("#js_carousel__1").owlCarousel({
     dots: false,
