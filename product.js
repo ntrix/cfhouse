@@ -1,11 +1,6 @@
-const F = document.querySelector.bind(document);
 const linkDetail = "detail.html#",
     linkAdd = "#",
     linkOrder = "indexJS.html#payment";
-
-$("#shadow--mobile").hide();
-$("#nav--mobile").hide();
-$("#search__field").hide();
 
 const imagesPath = "images/product/";
 function renderItems(sectionName, items) {
@@ -64,26 +59,3 @@ renderItems("mocktail", mocktail);
 
 const dessert = ["dessert1", "dessert2", "dessert3"];
 renderItems("dessert", dessert);
-
-$("#js_hamburger-menu").click(function () {
-    $("#search__field").fadeOut();
-    $("#shadow--mobile").fadeToggle();
-    $("#nav--mobile").slideToggle();
-});
-
-$("#shadow--mobile").click(function () {
-    $("#nav--mobile").slideUp();
-    $("#shadow--mobile").fadeOut();
-});
-
-$("#search__icon").click(function () {
-    $("#search__field").fadeToggle();
-    F("#search__field").value = "";
-});
-
-$("#search__field").keypress(function (event) {
-    if (event.keyCode == "13") {
-        F("#search__field").value = "";
-        $("#search__field").fadeOut();
-    }
-});
