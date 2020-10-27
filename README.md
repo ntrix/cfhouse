@@ -11,8 +11,6 @@ detail.html (a demo for each product detail)
 
 ## TODO
 
-update router links
-
 svg flaticons instead gylphicons
 
 lightweight svg instead fontawesome icons
