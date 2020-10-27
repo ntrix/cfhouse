@@ -64,7 +64,7 @@ for (let item of carouselItems) {
           <a href="product.html#${item.target}" class="banner__title">${item.title}</a>
           <div class="banner__content">${item.content}</div>
         </div>
-        <a href="product.html#${item.link}" class="${item.className}">${item.btnType}</a>
+        <a href="product.html#${item.target}" class="${item.className}">${item.btnType}</a>
       </div>
     </div>`
   );
