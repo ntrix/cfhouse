@@ -26,8 +26,8 @@ $('#footer').append(`
             <div class="col-sm-2 col-xs-4 footer__links">
                 <ul>
                     <li><a href="#page-top">About Us</a></li>
-                    <li><a href="product1.html#filter">Menu</a></li>
-                    <li><a href="#news">News</a></li>
+                    <li><a href="product.html#filter">Menu</a></li>
+                    <li><a href="index.html#news">News</a></li>
                     <li><a href="#footer">Carrier</a></li>
                     <li><a href="#contacts">Contact</a></li>
                 </ul>

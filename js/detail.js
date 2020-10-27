@@ -8,10 +8,10 @@ const products = [
 ];
 for (let product of products) {
     $("#js_carousel__1").append(`
-<div class="owl--slides">
-<a><img src="images/detail/${product}.jpg" loading="lazy" alt="${product}" class="img-thumbnail"/></a>
-</div>
-`);
+        <div class="owl--slides">
+            <img src="images/detail/${product}.jpg" loading="lazy" alt="${product}" class="img-thumbnail"/>
+        </div>`
+    );
 }
 
 const others = [
@@ -24,10 +24,10 @@ const others = [
 ];
 for (let other of others) {
     $("#js_carousel__2").append(`
-<div class="owl--slides2">
-<a href="product.html"><img src="images/detail/${other}.jpg" loading="lazy" alt="${other}" class="img-responsive"/></a>
-</div>
-`);
+        <div class="owl--slides2">
+            <a href="product.html#specialties"><img src="images/detail/${other}.jpg" loading="lazy" alt="${other}" class="img-responsive"/></a>
+        </div>`
+    );
 }
 
 $("#js_carousel__1").owlCarousel({

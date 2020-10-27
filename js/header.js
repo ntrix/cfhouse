@@ -23,17 +23,17 @@ $('#page-top').append(`
                 <div class="hidden-xs">
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#footer">Carrier</a></li>
-                    <li><a href="#news">News</a></li>
+                    <li><a href="index.html#news">News</a></li>
                     <li><a href="product.html#filter">Menu</a></li>
-                    <li><a href="#feature">Shop</a></li>
+                    <li><a href="detail.html#product-details">Shop</a></li>
                 </div>
             </ul>
         </nav>
         <div class="col-xs-10" id="nav--mobile">
             <ul>
-                <li><a href="#feature">Shop</a></li>
+                <li><a href="detail.html#product-details">Shop</a></li>
                 <li><a href="product.html#filter">Menu</a></li>
-                <li><a href="#news">News</a></li>
+                <li><a href="index.html#news">News</a></li>
                 <li><a href="#footer">Carrier</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>

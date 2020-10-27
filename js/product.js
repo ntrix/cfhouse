@@ -1,6 +1,6 @@
-const linkDetail = "detail.html#",
-    linkAdd = "#",
-    linkOrder = "indexJS.html#payment";
+const linkDetail = "detail.html#product-details",
+    linkAdd = "detail.html#",
+    linkOrder = "index.html#payment";
 
 const imagesPath = "images/product/";
 function renderItems(sectionName, items) {
@@ -10,20 +10,15 @@ function renderItems(sectionName, items) {
 </section>`);
     for (let item of items) {
         $("#" + sectionName).append(`
-<div id="${item}" class="product-card card--actions">
-<img loading="lazy" alt="${item}" src="${
-            imagesPath + item
-        }.jpg">
-<div class="card--actions__overlay">
-    <div><a href="${
-            linkDetail + item
-        }" class="actions__btn">Details</a></div>
-    <div><a href="${
-            linkAdd + item
-        }" class="actions__btn">Add to cart</a></div>
-    <div><a href="${linkOrder}" class="actions__btn">Order</a></div>
-</div>
-</div>`);
+            <div id="${item}" class="product-card card--actions">
+                <img loading="lazy" alt="${item}" src="${imagesPath + item}.jpg">
+                <div class="card--actions__overlay">
+                    <div><a href="${linkDetail}" class="actions__btn">Details</a></div>
+                    <div><a href="${linkAdd + item}" class="actions__btn">Add to cart</a></div>
+                    <div><a href="${linkOrder}" class="actions__btn">Order</a></div>
+                </div>
+            </div>`
+        );
     }
 }
 
