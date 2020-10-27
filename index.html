@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Coffee House Homepage</title>
+
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/fontawesome/css/all.css" />
+
+		<script eager src="js/jquery-1.11.3.min.js"></script>
+		<script defer>
+			$(document).ready(function () {
+				const F = document.querySelector.bind(document);
+				$("#shadow--mobile").hide();
+				$("#nav--mobile").hide();
+				$("#search__field").hide();
+
+				["expresso", "latte", "mocktail", "dessert"].forEach((item) =>
+					$("#js_products").append(`
+          <div class="col-md-3 col-xs-6 product-card">
+				    <a href="product1.html#${item}"><img src="images/product/top/${item}.jpg" loading="lazy" alt="${item}" class="img-responsive"></a>
+				  </div>`)
+				);
+
+				const carouselItems = [
+					{
+						id: 1,
+						title: `Emotion`,
+						target: "mocktail",
+						className: `btn btn-lg`,
+						btnType: `More`,
+						active: ` active`,
+						content: `<p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas recusandae laborum aliquam.</p><p>Quotes & Author</p>`,
+					},
+					{
+						id: 2,
+						title: `Chocolate`,
+						target: "dessert",
+						className: `btn btn-lg`,
+						btnType: `Order`,
+						content: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta <br> nesciunt velit, eos sunt, eum minima, <br>consequatur nobis ut quo ipsum fugit provident! Lorem ipsum dolor <br>sit amet. Lorem ipsum dolor sit amet.</p>`,
+					},
+					{
+						id: 3,
+						title: ``,
+						target: "specialties",
+						className: ``,
+						btnType: `<img loading="lazy" alt="deal" id="banner__deal" src="images/banner/deal.png">`,
+						content: ``,
+					},
+					{
+						id: 4,
+						title: `Coffee`,
+						target: "expresso",
+						className: ``,
+						btnType: ``,
+						content: ``,
+					},
+					{
+						id: 5,
+						title: `<h1 style="color:#fff">LATTE</h1>`,
+						target: "latte",
+						className: `btn btn-lg`,
+						btnType: `Check It Out`,
+						content: `<p>Latte secret is consectetur adipisicing elit. Dicta <br> nesciunt velit, eos sunt, eum minima, <br>consequatur nobis ut quo ipsum fugit provident! Lorem ipsum dolor</p>`,
+					},
+				];
+				for (let item of carouselItems) {
+					$(".carousel-indicators").append(`
+          <li data-target="#hero__carousel" data-slide-to="${
+					item.id - 1
+				}" class="${item.active || ""}"></li>`);
+					$("#js_carousel__items").append(`
+          <div class="item${item.active || ""}">
+            <img loading="lazy" alt="First slide" class="center-block hidden-xs" src="images/banner/banner${
+					item.id
+				}.jpg">
+            <img loading="lazy" alt="First slide" class="center-block visible-xs" src="images/banner/banner${
+					item.id
+				}mobile.jpg">
+            <div class="carousel-caption">
+              <div class="row">
+                <a href="product1.html#${item.target}" class="banner__title">${
+						item.title
+					}</a>
+                <div class="banner__content">${item.content}</div>
+              </div>
+              <a href="product1.html#${item.link}" class="${item.className}">${
+						item.btnType
+					}</a>
+            </div>
+          </div>`);
+				}
+
+				const newsItems = [
+					{
+						imgSrc: `images/news/image1.jpg`,
+						title: `News Title Here`,
+						link: `#newsSource`,
+						content: `<p>Starbuck, Highland coffee, the Coffee house is Lorem ipsum dolor sit amet consectetur.</p>`,
+					},
+					{
+						imgSrc: `images/news/image2.jpg`,
+						title: `Or Headline Below`,
+						link: `#newsSource`,
+						content: `<h4>Starbuck, Highland coffee, the Coffee house</h4><p> is Lorem ipsum dolor sit amet consectetur.</p><p>Starbuck, Highland coffee, the Coffee house.</p>`,
+					},
+					{
+						imgSrc: `images/news/image3.jpg`,
+						title: `Square Image, Short Article`,
+						link: `#newsSource`,
+						content: `<p>Starbuck, Highland coffee, the Coffee house is Lorem ipsum dolor sit amet consectetur.</p>`,
+					},
+					{
+						imgSrc: `images/news/image4.jpg`,
+						title: `Long Image, Long Article`,
+						link: `#newsSource`,
+						content: `<p>Starbuck, Highland coffee, the Coffee house is Lorem ipsum dolor sit amet consectetur.</p><p>Starbuck, Highland coffee, the Coffee house.</p><p>Starbuck, Highland coffee, the Coffee house is Lorem ipsum dolor sit amet consectetur.</p><p>Really long article is hidden. Starbuck, Highland coffee, the Coffee house is Lorem ipsum dolor sit amet consectetur.</p>`,
+					},
+				];
+				for (let n of newsItems) {
+					$("#js_news__items").append(`
+        <div class="news__box">
+          <div class="news__article">
+            <div class="col-xs-6">
+              <a href="${n.link}"><img src="${n.imgSrc}" loading="lazy" alt="" class="img-responsive"></a>
+            </div>
+            <div class="col-xs-6">
+              <a class="news__title" href="${n.link}">${n.title}</a>
+              ${n.content}
+            </div>
+          </div>
+        </div>`);
+				}
+
+				$("#js_hamburger-menu").click(function () {
+					$("#search__field").fadeOut();
+					$("#shadow--mobile").fadeToggle();
+					$("#nav--mobile").slideToggle();
+				});
+
+				$("#shadow--mobile").click(function () {
+					$("#nav--mobile").slideUp();
+					$("#shadow--mobile").fadeOut();
+				});
+
+				$("#search__icon").click(function () {
+					$("#search__field").fadeToggle();
+					F("#search__field").value = "";
+				});
+
+				$("#search__field").keypress(function (event) {
+					if (event.keyCode == "13") {
+						F("#search__field").value = "";
+						$("#search__field").fadeOut();
+					}
+				});
+			});
+		</script>
+		<script defer src="js/bootstrap.js"></script>
+	</head>
+
+	<body>
+		<div class="page">
+			<div id="shadow--mobile"></div>
+
+			<header id="page-top">
+				<div class="container">
+					<div class="col-xs-3" id="logo">
+						<a href="index.html"
+							><img src="images/logo.png" alt="logo"
+						/></a>
+					</div>
+					<nav class="col-xs-9 text-right">
+						<ul>
+							<li id="js_hamburger-menu">
+								<p class="btn btn-xs"><i class="fas fa-bars"></i></p>
+							</li>
+							<li>
+								<label for="search__field">
+									<i class="fas fa-search" id="search__icon"></i>
+								</label>
+							</li>
+							<li><input type="text" id="search__field" /></li>
+
+							<div class="hidden-xs">
+								<li><a href="#contact">Contact</a></li>
+								<li><a href="#footer">Carrier</a></li>
+								<li><a href="#news">News</a></li>
+								<li><a href="product1.html#filter">Menu</a></li>
+								<li><a href="#feature">Shop</a></li>
+							</div>
+						</ul>
+					</nav>
+					<div class="col-xs-10" id="nav--mobile">
+						<ul>
+							<li><a href="#feature">Shop</a></li>
+							<li><a href="product1.html#filter">Menu</a></li>
+							<li><a href="#news">News</a></li>
+							<li><a href="#footer">Carrier</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</header>
+
+			<div
+				id="hero__carousel"
+				class="container-fluid carousel slide"
+				data-ride="carousel"
+			>
+				<ol class="carousel-indicators"></ol>
+				<div
+					class="carousel-inner"
+					role="listbox"
+					id="js_carousel__items"
+				></div>
+
+				<a
+					class="left carousel-control"
+					href="#hero__carousel"
+					role="button"
+					data-slide="prev"
+				>
+					<span
+						class="glyphicon glyphicon-chevron-left"
+						aria-hidden="true"
+					></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a
+					class="right carousel-control"
+					href="#hero__carousel"
+					role="button"
+					data-slide="next"
+				>
+					<span
+						class="glyphicon glyphicon-chevron-right"
+						aria-hidden="true"
+					></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+
+			<section id="feature" class="container">
+				<div class="section__tag">Menu</div>
+
+				<div class="row" id="js_products"></div>
+
+				<div class="row text-right">
+					<a href="product1.html#filter" class="btn">Show all products</a>
+				</div>
+			</section>
+
+			<section id="news" class="container">
+				<div class="section__tag">News</div>
+
+				<div class="row d-flex" id="js_news__items"></div>
+
+				<div class="row text-right">
+					<a href="#news" class="btn">Show all news</a>
+				</div>
+			</section>
+
+			<footer id="footer" class="container-fluid">
+				<div class="container">
+					<div class="row d-flex">
+						<div class="col-sm-4 col-xs-12">
+							<a href="index.html">
+								<img
+									src="images/footerLogo.png"
+									loading="lazy"
+									alt="footer logo"
+									id="footer__logo"
+								/>
+							</a>
+						</div>
+
+						<div class="col-sm-3 col-xs-6 footer__contacts" id="contact">
+							<h4><b>Coffee 76 eCommerce Ltd.</b></h4>
+							<p>
+								Hotline<br />
+								<b>1900 1234 - 5678 000</b><br />
+								<br />
+								Address:<br />
+								123 ABC street
+							</p>
+						</div>
+
+						<div class="col-sm-2 col-xs-4 footer__links">
+							<ul>
+								<li><a href="#page-top">About Us</a></li>
+								<li><a href="product1.html#filter">Menu</a></li>
+								<li><a href="#news">News</a></li>
+								<li><a href="#footer">Carrier</a></li>
+								<li><a href="#contacts">Contact</a></li>
+							</ul>
+						</div>
+
+						<div class="col-sm-3 col-xs-2">
+							<ul class="social">
+								<li>
+									<a href="https://www.facebook.com"
+										><i class="fab fa-facebook"></i
+									></a>
+								</li>
+								<li>
+									<a href="https://www.instagram.com"
+										><i class="fab fa-instagram"></i
+									></a>
+								</li>
+								<li>
+									<a href="https://twitter.com"
+										><i class="fab fa-twitter"></i
+									></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row text-center">
+						<p>2019 Copyright &copy; Coffee 76. Design by NT T</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

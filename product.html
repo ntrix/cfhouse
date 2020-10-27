@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Products</title>
+
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/fontawesome/css/all.css" />
+
+		<script eager src="js/jquery-1.11.3.min.js"></script>
+		<script defer>
+			$(document).ready(function () {
+				const F = document.querySelector.bind(document);
+				const linkDetail = "detail.html#",
+					linkAdd = "#",
+					linkOrder = "indexJS.html#payment";
+
+				$("#shadow--mobile").hide();
+				$("#nav--mobile").hide();
+				$("#search__field").hide();
+
+				const imagesPath = "images/product/";
+				function renderItems(sectionName, items) {
+					$("#js_main").append(`
+            <section class="row d-flex" id="${sectionName}">
+              <div class="col-xs-12 section__label">&diams; ${sectionName.toUpperCase()}</div>
+            </section>`);
+					for (let item of items) {
+						$("#" + sectionName).append(`
+              <div id="${item}" class="product-card card--actions">
+                <img loading="lazy" alt="${item}" src="${
+							imagesPath + item
+						}.jpg">
+                <div class="card--actions__overlay">
+                  <div><a href="${
+							linkDetail + item
+						}" class="actions__btn">Details</a></div>
+                  <div><a href="${
+							linkAdd + item
+						}" class="actions__btn">Add to cart</a></div>
+                  <div><a href="${linkOrder}" class="actions__btn">Order</a></div>
+                </div>
+              </div>`);
+					}
+				}
+
+				const specialties = [
+					"specialty1",
+					"lycheeTea",
+					"specialty3",
+					"specialty4",
+					"specialty5",
+					"specialty6",
+				];
+				renderItems("specialties", specialties);
+
+				const expresso = [
+					"expresso1",
+					"expresso2",
+					"expresso3",
+					"expresso4",
+					"expresso5",
+				];
+				renderItems("expresso", expresso);
+
+				const latte = ["latte1", "latte2", "latte3"];
+				renderItems("latte", latte);
+
+				const mocktail = [
+					"mocktail1",
+					"mocktail2",
+					"mocktail3",
+					"mocktail4",
+				];
+				renderItems("mocktail", mocktail);
+
+				const dessert = ["dessert1", "dessert2", "dessert3"];
+				renderItems("dessert", dessert);
+
+				$("#js_hamburger-menu").click(function () {
+					$("#search__field").fadeOut();
+					$("#shadow--mobile").fadeToggle();
+					$("#nav--mobile").slideToggle();
+				});
+
+				$("#shadow--mobile").click(function () {
+					$("#nav--mobile").slideUp();
+					$("#shadow--mobile").fadeOut();
+				});
+
+				$("#search__icon").click(function () {
+					$("#search__field").fadeToggle();
+					F("#search__field").value = "";
+				});
+
+				$("#search__field").keypress(function (event) {
+					if (event.keyCode == "13") {
+						F("#search__field").value = "";
+						$("#search__field").fadeOut();
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="page">
+			<div id="shadow--mobile"></div>
+			<header id="page-top">
+				<div class="container">
+					<div class="col-xs-3" id="logo">
+						<a href="index.html"
+							><img src="images/logo.png" alt="logo"
+						/></a>
+					</div>
+					<nav class="col-xs-9 text-right">
+						<ul>
+							<li id="js_hamburger-menu">
+								<p class="btn btn-xs"><i class="fas fa-bars"></i></p>
+							</li>
+							<li>
+								<label for="search__field">
+									<i class="fas fa-search" id="search__icon"></i>
+								</label>
+							</li>
+							<li><input type="text" id="search__field" /></li>
+
+							<div class="hidden-xs">
+								<li><a href="">Contact</a></li>
+								<li><a href="">Carrier</a></li>
+								<li><a href="">News</a></li>
+								<li><a href="">Menu</a></li>
+								<li><a href="">Shop</a></li>
+							</div>
+						</ul>
+					</nav>
+					<div class="col-xs-10" id="nav--mobile">
+						<ul>
+							<li><a href="">Shop</a></li>
+							<li><a href="">Menu</a></li>
+							<li><a href="">News</a></li>
+							<li><a href="">Carrier</a></li>
+							<li><a href="">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</header>
+
+			<aside id="cart" class="container-fluid">
+				<a href="#"><img src="images/detail/cart.png" alt="cart" /></a>
+			</aside>
+
+			<hero id="product-banner" class="container-fluid">
+				<div class="container">
+					<div class="row">
+						<a href="" class="banner__title">The Way, The Process ..</a><br /><br />
+						<div class="banner__content text-center">
+							<p>
+								<br />Have you ever asked yourself ...<br />
+								<br />how long does it "realy" take to have a cup of
+								coffee?
+							</p>
+							<br />
+						</div>
+					</div>
+				</div>
+			</hero>
+
+			<div class="container">
+				<div class="row">
+					<aside id="filter" class="col-md-3 col-xs-4 text-center">
+						<img
+							src="images/product/filterPatternTop.png"
+							class="img-responsive"
+						/>
+						<ul>
+							<li><a href="#specialties">Specialties</a></li>
+							<li>
+								<a href="#expresso"
+									><img src="images/product/expresso.png" />
+									Expresso</a
+								>
+							</li>
+							<li>
+								<a href="#latte"
+									><img src="images/product/coffeeLatte.png" /> Coffee
+									Latte</a
+								>
+							</li>
+							<li>
+								<a href="#mocktail"
+									><img src="images/product/mocktail.png" />
+									Mocktail</a
+								>
+							</li>
+							<li>
+								<a href="#dessert"
+									><img src="images/product/dessert.png" /> Dessert</a
+								>
+							</li>
+						</ul>
+						<img
+							src="images/product/filterPatternBottom.png"
+							class="img-responsive"
+						/>
+					</aside>
+
+					<main id="js_main" class="col-md-9 col-xs-8"></main>
+				</div>
+			</div>
+
+			<footer id="footer" class="container-fluid">
+				<div class="container">
+					<div class="row d-flex">
+						<div class="col-sm-4 col-xs-12">
+							<a href="index.html">
+								<img
+									src="images/footerLogo.png"
+									loading="lazy"
+									alt="footer logo"
+									id="footer__logo"
+								/>
+							</a>
+						</div>
+
+						<div class="col-sm-3 col-xs-6 footer__contacts">
+							<h4><b>Coffee 76 eCommerce Ltd.</b></h4>
+							<p>
+								Hotline<br />
+								<b>1900 1234 - 5678 000</b><br />
+								<br />
+								Address:<br />
+								123 ABC street
+							</p>
+						</div>
+
+						<div class="col-sm-2 col-xs-4 footer__links">
+							<ul>
+								<li><a href="">About Us</a></li>
+								<li><a href="">Menu</a></li>
+								<li><a href="">News</a></li>
+								<li><a href="">Carrier</a></li>
+								<li><a href="">Contact</a></li>
+							</ul>
+						</div>
+
+						<div class="col-sm-3 col-xs-2">
+							<ul class="social">
+								<li>
+									<a href="https://www.facebook.com"
+										><i class="fab fa-facebook"></i
+									></a>
+								</li>
+								<li>
+									<a href="https://www.instagram.com"
+										><i class="fab fa-instagram"></i
+									></a>
+								</li>
+								<li>
+									<a href="https://twitter.com"
+										><i class="fab fa-twitter"></i
+									></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row text-center">
+						<p>2019 Copyright &copy; Coffee 76. Design by NT T</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

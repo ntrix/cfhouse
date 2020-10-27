@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Product Details</title>
+
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/owl carousel/owl.carousel.min.css" />
+		<link rel="stylesheet" href="css/owl carousel/owl.theme.default.min.css" />
+
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/fontawesome/css/all.css" />
+
+		<script eager src="js/jquery-1.11.3.min.js"></script>
+		<script defer src="js/owl.carousel.min.js"></script>
+		<script defer>
+			$(document).ready(function () {
+				const F = document.querySelector.bind(document);
+				$("#shadow--mobile").hide();
+				$("#nav--mobile").hide();
+				$("#search__field").hide();
+
+				const products = [
+					"imgProduct2",
+					"imgProduct3",
+					"imgProduct4",
+					"imgProduct5",
+					"imgProduct6",
+					"productLatte",
+				];
+				for (let product of products) {
+					$("#js_carousel__1").append(`
+            <div class="owl--slides">
+              <a><img src="images/detail/${product}.jpg" loading="lazy" alt="${product}" class="img-thumbnail"/></a>
+            </div>
+          `);
+				}
+
+				const others = [
+					"product1",
+					"product2",
+					"product3",
+					"product4",
+					"product2",
+					"product4",
+				];
+				for (let other of others) {
+					$("#js_carousel__2").append(`
+            <div class="owl--slides2">
+              <a href="product.html"><img src="images/detail/${other}.jpg" loading="lazy" alt="${other}" class="img-responsive"/></a>
+            </div>
+          `);
+				}
+
+				$("#js_hamburger-menu").click(function () {
+					$("#search__field").fadeOut();
+					$("#shadow--mobile").fadeToggle();
+					$("#nav--mobile").slideToggle();
+				});
+
+				$("#shadow--mobile").click(function () {
+					$("#nav--mobile").slideUp();
+					$("#shadow--mobile").fadeOut();
+				});
+
+				$("#search__icon").click(function () {
+					$("#search__field").fadeToggle();
+					F("#search__field").value = "";
+				});
+
+				$("#search__field").keypress(function (event) {
+					if (event.keyCode == "13") {
+						F("#search__field").value = "";
+						$("#search__field").fadeOut();
+					}
+				});
+
+				$("#js_carousel__1").owlCarousel({
+					dots: false,
+					loop: true,
+					autoplay: true,
+					autoplayTimeout: 2900,
+					autoplayHoverPause: true,
+					smartSpeed: 1000,
+					responsiveClass: true,
+					responsive: {
+						0: { items: 3, center: true },
+						768: { items: 3 },
+						992: { items: 4 },
+					},
+				});
+
+				$("#js_carousel__2").owlCarousel({
+					dots: false,
+					loop: true,
+					autoplay: true,
+					autoplayTimeout: 3100,
+					autoplayHoverPause: true,
+					smartSpeed: 1000,
+					responsiveClass: true,
+					responsive: {
+						0: { items: 2 },
+						768: { items: 4 },
+					},
+				});
+
+				$("#js_carousel__1 img").click(function () {
+					let imgSrc = $(this).attr("src");
+					$("#large-box img").attr("src", imgSrc);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="page">
+			<div id="shadow--mobile"></div>
+
+			<header id="page-top">
+				<div class="container">
+					<div class="col-xs-3" id="logo">
+						<a href="index.html"
+							><img src="images/logo.png" alt="logo"
+						/></a>
+					</div>
+					<nav class="col-xs-9 text-right">
+						<ul>
+							<li id="js_hamburger-menu">
+								<p class="btn btn-xs"><i class="fas fa-bars"></i></p>
+							</li>
+							<li>
+								<label for="search__field">
+									<i class="fas fa-search" id="search__icon"></i>
+								</label>
+							</li>
+							<li><input type="text" id="search__field" /></li>
+
+							<div class="hidden-xs">
+								<li><a href="#contact">Contact</a></li>
+								<li><a href="#footer">Carrier</a></li>
+								<li><a href="#news">News</a></li>
+								<li><a href="product1.html#filter">Menu</a></li>
+								<li><a href="#feature">Shop</a></li>
+							</div>
+						</ul>
+					</nav>
+					<div class="col-xs-10" id="nav--mobile">
+						<ul>
+							<li><a href="#feature">Shop</a></li>
+							<li><a href="product1.html#filter">Menu</a></li>
+							<li><a href="#news">News</a></li>
+							<li><a href="#footer">Carrier</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</header>
+
+			<aside id="cart" class="container-fluid">
+				<a href="#"><img src="images/detail/cart.png" alt="cart" /></a>
+			</aside>
+
+			<section class="bread-crumb">
+				<div class="container">
+					<a href="index.html">Menu</a> /
+					<a href="product.html#filter">Coffee Latte</a> /
+					<a href="#"><span>Latte</span></a>
+				</div>
+			</section>
+
+			<main class="container">
+        <section class="col-sm-6" id="product-details">
+          <div class="row">
+            <div class="col-xs-12 text-center" id="large-box">
+              <img src="images/detail/productLatte.jpg" class="img-thumbnail" loading="lazy" alt="product latte" />
+            </div>
+            <div class="col-xs-12">
+              <div class="owl-carousel owl-theme" id="js_carousel__1"></div>
+            </div>
+          </div>
+        </section>
+        <section class="col-sm-6">
+          <div class="row">
+            <div class="section__tag">Latte</div>
+            <article class="col-xs-12 product-info">
+              <h3>Caffe latte (or simply latte)</h3>
+              <p>is a coffee drink made with espresso and steamed milk. The word comes from the Italian caffè e latte, caffelatte or caffellatte, which means "coffee & milk". The word is also sometimes spelled latté or lattè in English with different kinds of accent marks, which can be a hyperforeignism or a deliberate attempt to indicate that the word is not pronounced according to the rules of English orthography.</p>
+              <p>In northern Europe and Scandinavia, the term café au lait has traditionally been used for the combination of espresso and milk. In France, café latte is mostly known from the original Italian name of the drink (caffè latte or caffelatte); a combination of espresso and steamed milk equivalent to a "latte" is in French called grand crème and in German Milchkaffee or (in Austria) Wiener Melange.</p>
+            </article>
+            <div class="col-xs-12">
+              <div id="price">45.000</div>
+            </div>
+            <div class="col-xs-5">
+              <a href="#" class="btn btn-lg">Order</a>
+            </div>
+            <div class="col-xs-7 text-right">
+              <a href="#" class="btn btn-lg">Add to cart</a>
+            </div>
+          </div>
+        </section>
+			</main>
+
+			<section class="container">
+				<div class="section__tag">Other Choices</div>
+				<div class="row owl-carousel owl-theme" id="js_carousel__2"></div>
+			</section>
+
+			<footer id="footer" class="container-fluid">
+				<div class="container">
+					<div class="row d-flex">
+						<div class="col-sm-4 col-xs-12">
+							<a href="index.html">
+								<img
+									src="images/footerLogo.png"
+									loading="lazy"
+									alt="footer logo"
+									id="footer__logo"
+								/>
+							</a>
+						</div>
+
+						<div class="col-sm-3 col-xs-6 footer__contacts" id="contact">
+							<h4><b>Coffee 76 eCommerce Ltd.</b></h4>
+							<p>
+								Hotline<br />
+								<b>1900 1234 - 5678 000</b><br />
+								<br />
+								Address:<br />
+								123 ABC street
+							</p>
+						</div>
+
+						<div class="col-sm-2 col-xs-4 footer__links">
+							<ul>
+								<li><a href="#page-top">About Us</a></li>
+								<li><a href="product1.html#filter">Menu</a></li>
+								<li><a href="#news">News</a></li>
+								<li><a href="#footer">Carrier</a></li>
+								<li><a href="#contacts">Contact</a></li>
+							</ul>
+						</div>
+
+						<div class="col-sm-3 col-xs-2">
+							<ul class="social">
+								<li>
+									<a href="https://www.facebook.com"
+										><i class="fab fa-facebook"></i
+									></a>
+								</li>
+								<li>
+									<a href="https://www.instagram.com"
+										><i class="fab fa-instagram"></i
+									></a>
+								</li>
+								<li>
+									<a href="https://twitter.com"
+										><i class="fab fa-twitter"></i
+									></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row text-center">
+						<p>2019 Copyright &copy; Coffee 76. Design by NT T</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Coffee House Homepage</title>
+
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/fontawesome/css/all.css" />
+
+		<script eager src="js/jquery-1.11.3.min.js"></script>
+		<script defer src="js/bootstrap.js"></script>
+		<script defer>
+			$(document).ready(function () {
+				const F = document.querySelector.bind(document);
+				$("#shadow--mobile").hide();
+				$("#nav--mobile").hide();
+				$("#search__field").hide();
+
+				$("#js_hamburger-menu").click(function () {
+					$("#search__field").fadeOut();
+					$("#shadow--mobile").fadeToggle();
+					$("#nav--mobile").slideToggle();
+				});
+
+				$("#shadow--mobile").click(function () {
+					$("#nav--mobile").slideUp();
+					$("#shadow--mobile").fadeOut();
+				});
+
+				$("#search__icon").click(function () {
+					$("#search__field").fadeToggle();
+					F("#search__field").value = "";
+				});
+
+				$("#search__field").keypress(function (event) {
+					if (event.keyCode == "13") {
+						F("#search__field").value = "";
+						$("#search__field").fadeOut();
+					}
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="page">
+			<div id="shadow--mobile"></div>
+
+			<header id="page-top">
+				<div class="container">
+					<div class="col-xs-3" id="logo">
+						<a href="index.html"
+							><img src="images/logo.png" alt="logo"
+						/></a>
+					</div>
+					<nav class="col-xs-9 text-right">
+						<ul>
+							<li id="js_hamburger-menu">
+								<p class="btn btn-xs"><i class="fas fa-bars"></i></p>
+							</li>
+							<li>
+								<label for="search__field">
+									<i class="fas fa-search" id="search__icon"></i>
+								</label>
+							</li>
+							<li><input type="text" id="search__field" /></li>
+
+							<div class="hidden-xs">
+								<li><a href="">Contact</a></li>
+								<li><a href="">Carrier</a></li>
+								<li><a href="">News</a></li>
+								<li><a href="">Menu</a></li>
+								<li><a href="">Shop</a></li>
+							</div>
+						</ul>
+					</nav>
+					<div class="col-xs-10" id="nav--mobile">
+						<ul>
+							<li><a href="">Shop</a></li>
+							<li><a href="product.html">Menu</a></li>
+							<li><a href="">News</a></li>
+							<li><a href="">Carrier</a></li>
+							<li><a href="">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</header>
+
+			<div id="hero__carousel" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li
+						data-target="#hero__carousel"
+						data-slide-to="0"
+						class="active"
+					></li>
+					<li data-target="#hero__carousel" data-slide-to="1"></li>
+					<li data-target="#hero__carousel" data-slide-to="2"></li>
+					<li data-target="#hero__carousel" data-slide-to="3"></li>
+					<li data-target="#hero__carousel" data-slide-to="4"></li>
+				</ol>
+
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img
+							loading="lazy"
+							alt="First slide"
+							class="center-block hidden-xs"
+							src="images/banner/banner1.jpg"
+						/>
+						<img
+							loading="lazy"
+							alt="First slide"
+							class="center-block visible-xs"
+							src="images/banner/banner1mobile.jpg"
+						/>
+						<div class="carousel-caption">
+							<div class="row">
+								<a href="product.html" class="banner__title">Emotion</a>
+								<div class="banner__content">
+									<p>
+										"Lorem ipsum dolor sit amet consectetur
+										adipisicing elit. Quas recusandae laborum aliquam.
+									</p>
+									<p>Quotes & Author</p>
+								</div>
+							</div>
+							<a href="product.html" class="btn btn-lg">More</a>
+						</div>
+					</div>
+
+					<div class="item">
+						<img
+							loading="lazy"
+							alt="Second slide"
+							class="center-block hidden-xs"
+							src="images/banner/banner2.jpg"
+						/>
+						<img
+							loading="lazy"
+							alt="Second slide"
+							class="center-block visible-xs"
+							src="images/banner/banner2mobile.jpg"
+						/>
+						<div class="carousel-caption">
+							<div class="row">
+								<a href="product.html" class="banner__title"
+									>Chocolate</a
+								>
+								<div class="banner__content">
+									<p>
+										Lorem ipsum dolor sit amet consectetur adipisicing
+										elit. Dicta <br />
+										nesciunt velit, eos sunt, eum minima,
+										<br />consequatur nobis ut quo ipsum fugit
+										provident! Lorem ipsum dolor <br />sit amet. Lorem
+										ipsum dolor sit amet.
+									</p>
+								</div>
+							</div>
+							<a href="product.html" class="btn btn-lg">Order</a>
+						</div>
+					</div>
+
+					<div class="item">
+						<img
+							loading="lazy"
+							alt="Third slide"
+							class="center-block hidden-xs"
+							src="images/banner/banner3.jpg"
+						/>
+						<img
+							loading="lazy"
+							alt="Third slide"
+							class="center-block visible-xs"
+							src="images/banner/banner3mobile.jpg"
+						/>
+						<div class="carousel-caption">
+							<a href="product.html"
+								><img
+									loading="lazy"
+									alt="deal"
+									class="img-responsive"
+									id="banner__deal"
+									src="images/banner/deal.png"
+							/></a>
+						</div>
+					</div>
+
+					<div class="item">
+						<a href="product.html">
+							<img
+								loading="lazy"
+								alt="Fourth slide"
+								class="center-block hidden-xs"
+								src="images/banner/banner4.jpg"
+							/>
+							<img
+								loading="lazy"
+								alt="Fourth slide"
+								class="center-block visible-xs"
+								src="images/banner/banner4mobile.jpg"
+							/>
+						</a>
+					</div>
+
+					<div class="item">
+						<img
+							loading="lazy"
+							alt="Fifth slide"
+							class="center-block hidden-xs"
+							src="images/banner/banner5.jpg"
+						/>
+						<img
+							loading="lazy"
+							alt="Fifth slide"
+							class="center-block visible-xs"
+							src="images/banner/banner5mobile.jpg"
+						/>
+						<div class="carousel-caption">
+							<div class="row">
+								<h1><b>LATTE</b></h1>
+								<div class="banner__content">
+									<p>
+										Latte secret is consectetur adipisicing elit.
+										Dicta <br />
+										nesciunt velit, eos sunt, eum minima,
+										<br />consequatur nobis ut quo ipsum fugit
+										provident! Lorem ipsum dolor
+									</p>
+								</div>
+							</div>
+							<a href="product.html" class="btn btn-lg">Check it out</a>
+						</div>
+					</div>
+				</div>
+
+				<a
+					class="left carousel-control"
+					href="#hero__carousel"
+					role="button"
+					data-slide="prev"
+				>
+					<span
+						class="glyphicon glyphicon-chevron-left"
+						aria-hidden="true"
+					></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a
+					class="right carousel-control"
+					href="#hero__carousel"
+					role="button"
+					data-slide="next"
+				>
+					<span
+						class="glyphicon glyphicon-chevron-right"
+						aria-hidden="true"
+					></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+
+			<section id="feature" class="container">
+				<div class="section__tag">Menu</div>
+
+				<div class="row">
+					<div class="col-md-3 col-xs-6 product-card">
+						<a href="product.html"
+							><img
+								src="images/product/top/expresso.jpg"
+								loading="lazy"
+								alt="product"
+								class="img-responsive"
+						/></a>
+					</div>
+					<div class="col-md-3 col-xs-6 product-card">
+						<a href="product.html"
+							><img
+								src="images/product/top/latte.jpg"
+								loading="lazy"
+								alt="product"
+								class="img-responsive"
+						/></a>
+					</div>
+					<div class="col-md-3 col-xs-6 product-card">
+						<a href="product.html"
+							><img
+								src="images/product/top/mocktail.jpg"
+								loading="lazy"
+								alt="product"
+								class="img-responsive"
+						/></a>
+					</div>
+					<div class="col-md-3 col-xs-6 product-card">
+						<a href="product.html"
+							><img
+								src="images/product/top/dessert.jpg"
+								loading="lazy"
+								alt="product"
+								class="img-responsive"
+						/></a>
+					</div>
+				</div>
+
+				<div class="row text-right">
+					<a href="product.html" class="btn">Show all</a>
+				</div>
+			</section>
+
+			<section id="news" class="container">
+				<div class="section__tag">News</div>
+
+				<div class="row d-flex">
+					<div class="news__box">
+						<div class="news__article">
+							<div class="col-xs-6">
+								<a href=""
+									><img
+										src="images/newsImg.jpg"
+										loading="lazy"
+										alt="news"
+										class="img-responsive"
+								/></a>
+							</div>
+							<div class="col-xs-6">
+								<a class="news__title" href=""
+									>News Title And Headline</a
+								>
+								<p>
+									Starbuck, Highland coffee, the Coffee house is Lorem
+									ipsum dolor sit amet consectetur.Starbuck, Highland
+									coffee, the Coffee house is Lorem ipsum dolor sit
+									amet consectetur.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="news__box">
+						<div class="news__article">
+							<div class="col-xs-6">
+								<a href=""
+									><img
+										src="images/newsImg.jpg"
+										loading="lazy"
+										alt="news"
+										class="img-responsive"
+								/></a>
+							</div>
+							<div class="col-xs-6">
+								<a class="news__title" href=""
+									>News Title And Headline</a
+								>
+								<p>
+									Starbuck, Highland coffee, the Coffee house is Lorem
+									ipsum dolor sit amet consectetur.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="news__box">
+						<div class="news__article">
+							<div class="col-xs-6">
+								<a href=""
+									><img
+										src="images/newsImg.jpg"
+										loading="lazy"
+										alt="news"
+										class="img-responsive"
+								/></a>
+							</div>
+							<div class="col-xs-6">
+								<a class="news__title" href=""
+									>News Title And Headline</a
+								>
+								<p>
+									Starbuck, Highland coffee, the Coffee house is Lorem
+									ipsum dolor sit amet consectetur.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="news__box">
+						<div class="news__article">
+							<div class="col-xs-6">
+								<a href=""
+									><img
+										src="images/newsImg.jpg"
+										loading="lazy"
+										alt="news"
+										class="img-responsive"
+								/></a>
+							</div>
+							<div class="col-xs-6">
+								<a class="news__title" href=""
+									>News Title And Headline</a
+								>
+								<p>
+									Starbuck, Highland coffee, the Coffee house is Lorem
+									ipsum dolor sit amet consectetur.Starbuck, Highland
+									coffee, the Coffee house is Lorem ipsum dolor sit
+									amet consectetur.Starbuck, Highland coffee, the
+									Coffee house is Lorem ipsum dolor sit amet
+									consectetur.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row text-right">
+					<a href="product.html" class="btn">Show all</a>
+				</div>
+			</section>
+
+			<footer id="footer" class="container-fluid">
+				<div class="container">
+					<div class="row d-flex">
+						<div class="col-sm-4 col-xs-12">
+							<a href="index.html">
+								<img
+									src="images/footerLogo.png"
+									loading="lazy"
+									alt="footer logo"
+									id="footer__logo"
+								/>
+							</a>
+						</div>
+
+						<div class="col-sm-3 col-xs-6 footer__contacts">
+							<h4><b>Coffee 76 eCommerce Ltd.</b></h4>
+							<p>
+								Hotline<br />
+								<b>1900 1234 - 5678 000</b><br />
+								<br />
+								Address:<br />
+								123 ABC street
+							</p>
+						</div>
+
+						<div class="col-sm-2 col-xs-4 footer__links">
+							<ul>
+								<li><a href="">About Us</a></li>
+								<li><a href="">Menu</a></li>
+								<li><a href="">News</a></li>
+								<li><a href="">Carrier</a></li>
+								<li><a href="">Contact</a></li>
+							</ul>
+						</div>
+
+						<div class="col-sm-3 col-xs-2">
+							<ul class="social">
+								<li>
+									<a href="https://www.facebook.com"
+										><i class="fab fa-facebook"></i
+									></a>
+								</li>
+								<li>
+									<a href="https://www.instagram.com"
+										><i class="fab fa-instagram"></i
+									></a>
+								</li>
+								<li>
+									<a href="https://twitter.com"
+										><i class="fab fa-twitter"></i
+									></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row text-center">
+						<p>2019 Copyright &copy; Coffee 76. Design by NT T</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
