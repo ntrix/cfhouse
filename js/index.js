@@ -24,7 +24,7 @@ const carouselItems = [
     target: "dessert",
     className: `btn btn-lg`,
     btnType: `Order`,
-    content: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta <br> nesciunt velit, eos sunt, eum minima, <br>consequatur nobis ut quo ipsum fugit provident! Lorem ipsum dolor <br>sit amet. Lorem ipsum dolor sit amet.</p>`,
+    content: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta <br> nesciunt velit, eos sunt, eum minima, <br>consequatur nobis ut quo ipsum fugit provident! Lorem ipsum dolor.</p>`,
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ const carouselItems = [
     target: "latte",
     className: `btn btn-lg`,
     btnType: `Check It Out`,
-    content: `<p>Latte secret is consectetur adipisicing elit. Dicta <br> nesciunt velit, eos sunt, eum minima, <br>consequatur nobis ut quo ipsum fugit provident! Lorem ipsum dolor</p>`,
+    content: `<p>Latte secret is consectetur adipisicing elit. Dicta <br> nesciunt velit, eos sunt, eum minima, <br>consequatur nobis ut quo ipsum fugit provident!</p>`,
   },
 ];
 for (let item of carouselItems) {
@@ -57,11 +57,13 @@ for (let item of carouselItems) {
   );
   $("#js_carousel__items").append(`
     <div class="item${item.active || ""}">
-      <img loading="lazy" alt="First slide" class="center-block hidden-xs" src="images/banner/banner${item.id}.jpg">
-      <img loading="lazy" alt="First slide" class="center-block visible-xs" src="images/banner/banner${item.id}mobile.jpg">
+      <img alt="slide placeholder" class="center-block hidden-xs" src="images/banner/Placeholder.png">
+      <img loading="lazy" alt="slide ${item.id}" class="carousel__img hidden-xs" src="images/banner/banner${item.id}.jpg">
+      <img alt="slide placeholder mobile" class="center-block visible-xs" src="images/banner/PlaceholderMobile.png">
+      <img loading="lazy" alt="slide ${item.id} mobile" class="carousel__img visible-xs" src="images/banner/banner${item.id}mobile.jpg">
       <div class="carousel-caption">
         <div class="row">
-          <a href="product.html#${item.target}" class="banner__title width-30">${item.title}</a>
+          <a href="product.html#${item.target}" class="banner__title width-20">${item.title}</a>
           <div class="banner__content">${item.content}</div>
         </div>
         <a href="product.html#${item.target}" class="${item.className}">${item.btnType}</a>
