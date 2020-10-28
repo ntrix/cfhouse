@@ -6,7 +6,7 @@ index.html
 
 product.html
 
-detail.html (a demo for each product detail)
+detail.html (a demo for each product's detail)
 
 
 ## TODO
