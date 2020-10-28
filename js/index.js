@@ -61,7 +61,7 @@ for (let item of carouselItems) {
       <img loading="lazy" alt="First slide" class="center-block visible-xs" src="images/banner/banner${item.id}mobile.jpg">
       <div class="carousel-caption">
         <div class="row">
-          <a href="product.html#${item.target}" class="banner__title">${item.title}</a>
+          <a href="product.html#${item.target}" class="banner__title width-30">${item.title}</a>
           <div class="banner__content">${item.content}</div>
         </div>
         <a href="product.html#${item.target}" class="${item.className}">${item.btnType}</a>

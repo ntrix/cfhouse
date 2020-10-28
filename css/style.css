@@ -104,17 +104,6 @@ nav ul li a:hover,
 	z-index: 99;
 }
 
-.banner__title:hover,
-#banner__deal:hover,
-#filter a:hover {
-	color: #fff;
-	transform: scale(1.05, 1.05);
-	transition: all ease 0.3s;
-}
-#banner__deal {
-	width: 30rem;
-	margin-left: -30%;
-}
 .banner__title {
 	display: block;
 	margin: 1rem auto;
@@ -127,12 +116,26 @@ nav ul li a:hover,
 	color: #efb85d;
 	background: #0007;
 }
+#banner__deal {
+	width: 30rem;
+	margin-left: -30%;
+}
+.banner__title:hover,
+#banner__deal:hover,
+#filter a:hover {
+	color: #fff;
+	transform: scale(1.05, 1.05);
+	transition: all ease 0.3s;
+}
 .banner__content {
 	margin-bottom: 2rem;
 	border-radius: 0.5rem;
 	font-size: 1.8rem;
 	color: #fff;
 	background: #8243;
+}
+.width-30 {
+	width: 30rem;
 }
 .carousel-caption {
 	position: absolute;
