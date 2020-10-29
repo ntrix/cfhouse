@@ -15,5 +15,11 @@ svg flaticons instead gylphicons
 
 lightweight svg instead fontawesome icons
 
-deploy
+carousel touch/swipe for mobile devices
 
+
+## issues
+
+mobile-safari position sticky (product.html)
+
+mobile-safari news section layout (index.html)
