@@ -231,7 +231,8 @@ footer {
 }
 #filter {
 	position: sticky;
-	top: 6.5rem;
+  position: -webkit-sticky;
+  top: 6.5rem;
 	margin: 2rem 0;
 	z-index: 9;
 }
