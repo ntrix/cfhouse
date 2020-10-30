@@ -39,6 +39,7 @@ body {
 }
 header {
 	position: sticky;
+	position: -webkit-sticky;
 	top: 0;
 	height: 6rem;
 	margin: 1rem 0;
