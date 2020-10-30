@@ -105,9 +105,9 @@ nav ul li a:hover,
 }
 .carousel__img {
 	position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
 }
 .banner__title {
 	display: block;
@@ -231,8 +231,8 @@ footer {
 }
 #filter {
 	position: sticky;
-  position: -webkit-sticky;
-  top: 6.5rem;
+	position: -webkit-sticky;
+	top: 6.5rem;
 	margin: 2rem 0;
 	z-index: 9;
 }
@@ -240,7 +240,7 @@ footer {
 	display: block;
 	margin: 1.5rem;
 	color: #812d4f;
-	font-size: 1.5rem;
+	font-size: 0.8rem;
 	font-weight: bold;
 }
 #filter a:hover {
@@ -351,7 +351,7 @@ footer {
 #price {
 	width: 15rem;
 	padding: 0.5rem;
-  margin-bottom: 1.5rem;
+	margin-bottom: 1.5rem;
 	border-radius: 0.5rem;
 	border: solid 2px #812d4f;
 
@@ -370,6 +370,9 @@ footer {
 @media (min-width: 568px) {
 	.card--actions {
 		width: 50%;
+	}
+	#filter a {
+		margin: 1.5rem;
 	}
 }
 @media (min-width: 768px) {
