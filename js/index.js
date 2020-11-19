@@ -11,12 +11,13 @@ for (let item of topItems) {
 const carouselItems = [
   {
     id: 1,
-    title: `Emotion`,
+    title: `Inspiration`,
     target: "mocktail",
     className: `btn btn-lg`,
     btnType: `More`,
     active: ` active`,
-    content: `<p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas recusandae laborum aliquam.</p><p>Quotes & Author</p>`,
+    content: `<p>"Bitter coffee is like a deep life<br>
+    Tasting how much is not enough"</p><p>Pham Thi Bich Hoa</p>`,
   },
   {
     id: 2,
@@ -24,7 +25,7 @@ const carouselItems = [
     target: "dessert",
     className: `btn btn-lg`,
     btnType: `Order`,
-    content: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta <br> nesciunt velit, eos sunt, eum minima, <br>consequatur nobis ut quo ipsum fugit provident! Lorem ipsum dolor.</p>`,
+    content: `<p>Chocolate is a word used to describe a type the food is<br>made from the fruit of the cocoa tree. Chocolate is the<br>base ingredient in many candies, ice cream, cakes...</p>`,
   },
   {
     id: 3,
@@ -48,7 +49,7 @@ const carouselItems = [
     target: "latte",
     className: `btn btn-lg`,
     btnType: `Check It Out`,
-    content: `<p>Latte secret is consectetur adipisicing elit. Dicta <br> nesciunt velit, eos sunt, eum minima, <br>consequatur nobis ut quo ipsum fugit provident!</p>`,
+    content: `When Latte is prepared, the Espresso and the hot milk<br>are mixed, above is still a foam layer<br>but thinner and lighter than Cappucinno.</p>`,
   },
 ];
 for (let item of carouselItems) {
@@ -75,27 +76,27 @@ for (let item of carouselItems) {
 const newsItems = [
   {
     imgSrc: `images/news/image1.jpg`,
-    title: `News Title Here`,
+    title: `Starbuck and HIghland`,
     link: `#newsSource`,
-    content: `<p>Starbuck, Highland coffee, the Coffee house is Lorem ipsum dolor sit amet consectetur.</p>`,
+    content: `<p>Starbuck, Highland coffee, the Coffee house are the famous Trademarks on the market.</p>`,
   },
   {
     imgSrc: `images/news/image2.jpg`,
-    title: `Or Headline Below`,
+    title: `Thousand Miles From One Step`,
     link: `#newsSource`,
-    content: `<h4>Starbuck, Highland coffee, the Coffee house</h4><p> is Lorem ipsum dolor sit amet consectetur.</p><p>Starbuck, Highland coffee, the Coffee house.</p>`,
+    content: `<h4>The journey of billion-dollars brand: </h4><p> The famous Trademarks on the market.</p><p>Starbuck, Highland coffee, the Coffee house.</p>`,
   },
   {
     imgSrc: `images/news/image3.jpg`,
-    title: `Square Image, Short Article`,
+    title: `Square But Not Small`,
     link: `#newsSource`,
-    content: `<p>Starbuck, Highland coffee, the Coffee house is Lorem ipsum dolor sit amet consectetur.</p>`,
+    content: `<p>Square but not small, short article about Starbuck, Highland coffee and the Coffee house.</p>`,
   },
   {
     imgSrc: `images/news/image4.jpg`,
-    title: `Long Image, Long Article`,
+    title: `The Journey Of Billion-dollars Brand`,
     link: `#newsSource`,
-    content: `<p>Starbuck, Highland coffee, the Coffee house is Lorem ipsum dolor sit amet consectetur.</p><p>Starbuck, Highland coffee, the Coffee house.</p><p>Starbuck, Highland coffee, the Coffee house is Lorem ipsum dolor sit amet consectetur.</p><p>Really long article is hidden. Starbuck, Highland coffee, the Coffee house is Lorem ipsum dolor sit amet consectetur.</p>`,
+    content: `<p>Starbuck, Highland coffee, the Coffee house are the famous Trademarks on the market.</p><p>Starbuck, Highland coffee, the Coffee house.</p><p>Starbuck, Highland coffee, the Coffee house are the famous Trademark on the market.</p><p>Really long article is hidden. Starbuck, Highland coffee, the Coffee house are the famous Trademark on the market.</p>`,
   },
 ];
 for (let newsItem of newsItems) {
